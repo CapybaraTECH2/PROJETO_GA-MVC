@@ -1,0 +1,92 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+<h1>cadastro Grade</h1>
+
+    <form action="index.html">
+
+      <div class="row">
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="nome" class="form-label">Ano</label>
+          <input type="text" class="form-control" id="Usuário" placeholder="Digite o ano">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="nome" class="form-label">Curso</label>
+          <input type="text" class="form-control" id="Usuário" placeholder="digita o nome do curso">
+        </div>
+
+        <div class="mb-1 col-md-6">
+          <label for="professor" class="form-label">Periodicidade de Ingresso</label>
+          <input type="text" class="form-control" id="senha" placeholder=" Ingresso">
+        </div>
+
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="floatingInputValue">Turno
+            <span class="input-group-text" id="basic-addon1">
+
+
+
+              <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck1">Matutino</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck2">Vespetino</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck3">Noturno</label>
+              </div>
+
+
+
+            </span>
+          </label>
+        </div>
+
+
+        <div class="mb-1 col-sm-12 col-md-6 .col-md-6">
+          <label for="professor" class="form-label">Unidade</label>
+          <input type="text" class="form-control" id="senha" placeholder="Digite a Unidade">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-3">
+          <label for="cargaHorariatotal" class="form-label">Carga Horária Presencial</label>
+          <input type="number" class="form-control" id="cargaHorariatotal"
+            placeholder="Informe a carga Horária Presencial">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-3">
+          <label for="cargaHorariasemanal" class="form-label">Carga Horária a Distância</label>
+          <input type="number" class="form-control" id="cargaHorariasemanal"
+            placeholder="Informe a carga Horária a Distância">
+        </div>
+
+
+        <div class="mb-1 col-sm-12 col-md-3">
+          <label for="cargaHorariatotal" class="form-label">Duração Minima</label>
+          <input type="number" class="form-control" id="cargaHorariatotal" placeholder="Informe a Duração Minima">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-3">
+          <label for="cargaHorariasemanal" class="form-label">Duração Maxima</label>
+          <input type="number" class="form-control" id="cargaHorariasemanal" placeholder="Informe a Duração Maxima">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6 .col-md-6">
+          <label for="professor" class="form-label">Vagas Ofertadas</label>
+          <input type="text" class="form-control" id="senha" placeholder="Digite a quantideade de vagas ofertadas">
+        </div>
+
+        <div class="mb-1 col-sm-12">
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+
+
+      </div>
+    </form>
+
+{% endblock %}

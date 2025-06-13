@@ -1,0 +1,117 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+<h1>Cadastro de Turmas</h1>
+
+    <form action="index.html">
+
+
+      <div class="row">
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected>Selecine o Professor</option>
+              <option value="1">Ari Galdino de Souza Neto</option>
+              <option value="2">Mateus Nunes dos Santos </option>
+              <option value="3">Henrique Brum Moreira e Silva</option>
+              <option value="4">Gustavo de Almeida Ferreira</option>
+            </select>
+            <label for="floatingSelect">Professor</label>
+          </div>
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected>Selecione a Disciplina</option>
+              <option value="1">Desenvolvimento Web</option>
+              <option value="2">Inteligência Artificial</option>
+              <option value="3">Engenheria de Software</option>
+              <option value="4">Segurança de Sistema </option>
+            </select>
+            <label for="floatingSelect">Disciplina</label>
+          </div>
+        </div>
+        <div class="mb-1 col-sm-12 col-md-3">
+          <label for="Turmas" class="form-label">Turma</label>
+          <input type="text" class="form-control" id="Turmas" placeholder="Informe a Turma">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="cargaHoraria" class="form-label">Carga Horária</label>
+          <input type="number" class="form-control" id="cargaHoraria" placeholder="Informe a Carga Horária semanal">
+        </div>
+
+        <div class="mb-1col-sm-12 col-md-3">
+          <label for="cargaHoraria" class="form-label">Código da Turma</label>
+          <input type="text" class="form-control" id="cargaHoraria" placeholder="Informe o Código da Turma">
+        </div>
+
+        <div class="mb-1col-sm-12 col-md-3">
+          <label for="cargaHoraria" class="form-label">Período</label>
+          <input type="number" class="form-control" id="cargaHoraria" placeholder="Informe o Período">
+        </div>
+
+        <div class="mb-3col-sm-12 col-md-3">
+          <label for="cargaHoraria" class="form-label">Grade</label>
+          <input type="number" class="form-control" id="cargaHoraria" placeholder="Informe à Grade">
+        </div>
+
+        <div class="mb-3 col-sm-12 col-md-3">
+          <label for="cargaHoraria" class="form-label">Semestre</label>
+          <input type="number" class="form-control" id="cargaHoraria" placeholder="Informe ò Semestre">
+        </div>
+
+        <div class="mb-0 col-sm-12 col-md-6">
+          <label for="cargaHoraria" class="form-label">Sala</label>
+          <input type="text" class="form-control" id="cargaHoraria" placeholder="Informe o número da sala">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected>Selecione o Curso</option>
+              <option value="1">Desenvolvimento Web</option>
+              <option value="2">Inteligência Artificial</option>
+              <option value="3">Engenheria de Software</option>
+              <option value="4">Segurança de Sistema </option>
+            </select>
+            <label for="floatingSelect">Curso</label>
+          </div>
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+        <label for="floatingInputValue">Dias de Aulas
+          <span class="input-group-text" id="basic-addon1">
+
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck1">Segunda</label>
+
+              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck2">Têrça</label>
+
+              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck3">Quarta</label>
+
+              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck4">Quinta</label>
+
+              <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck5">Sexta</label>
+            </div>
+
+          </span>
+        </label>
+      </div>
+
+      <div class="mb-1 col-sm-12 ">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+
+
+      </div>
+    </form>
+
+{% endblock %}

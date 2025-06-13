@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+<form action="index.html">
+
+    <div class="row">
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="nome" class="form-label">Nome do Curso</label>
+      <input type="text" class="form-control" id="Usuário" placeholder="digita o nome do Curso">
+    </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="nome" class="form-label">Descrição</label>
+      <textarea class="form-control" id="Bibliografiabasica" placeholder="Descrição do Curso"></textarea>
+      </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="professor" class="form-label">Data de início</label>
+      <input type="text" class="form-control" id="senha" placeholder=" Data de criação do Curso">
+    </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="professor" class="form-label">Habilitação</label>
+      <input type="text" class="form-control" id="senha" placeholder="Tipo de curso">
+    </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="professor" class="form-label">Unidade</label>
+      <input type="text" class="form-control" id="senha" placeholder="Digite a Unidade">
+    </div>
+
+    <div class="mb-1 col-sm-12">
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  
+      
+  </div>
+  </form>
+
+{% endblock %}

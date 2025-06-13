@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+
+    <h1>Cadastro de Disciplinas</h1>
+
+    <form action="index.html">
+
+      <div class="row">
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="nome" class="form-label">Nome da Disciplina</label>
+          <input type="text" class="form-control" id="nome" placeholder="Informe nome da Disciplina">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="Periodo" class="form-label">Período</label>
+          <input type="number" class="form-control" id="Período" placeholder="Informe ó Período">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="cargaHorariatotal" class="form-label">Carga Horária Total</label>
+          <input type="number" class="form-control" id="cargaHorariatotal" placeholder="Informe a carga horária total">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="cargaHorariasemanal" class="form-label">Carga Horária Semanal</label>
+          <input type="number" class="form-control" id="cargaHorariasemanal" placeholder="Informe a carga Horária semanal">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-4">
+          <label for="cargaHoraria" class="form-label">Sigla</label>
+          <input type="text" type="number" class="form-control" id="cargaHoraria" placeholder=" Informe a Sigla de Disciplina">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-4">
+          <label for="Componente" class="form-label">Componente</label>
+          <input type="text" class="form-control" id="Componente" placeholder="Informe ó componente">
+        </div>
+
+        <div class="mb-1col-sm-12 col-md-4">
+          <label for="Grade" class="form-label">Grade</label>
+          <input type="text" class="form-control" id="Grade" placeholder=" Informe á Grade">
+        </div>
+
+          <div class="mb-1 col-sm-12">
+            <label for="Bibliografiabasica" class="form-label">Bibliografia Básica</label>
+            <textarea class="form-control" id="Bibliografiabasica" placeholder="Informe à bibliografia básica"></textarea>
+          </div>
+
+          <div class="mb-1 col-sm-12">
+            <label for="BibliografiaComplementar" class="form-label">Bibliografia Complementar</label>
+            <textarea class="form-control" id="BibliografiaComplementar" placeholder="Informe à bibliografia complementar"></textarea>
+          </div>
+          
+          <div class="mb-1 col-sm-12 ">
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+
+
+        </div>
+    </form>
+
+
+{% endblock %}

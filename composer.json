@@ -1,0 +1,17 @@
+{
+    "name": "ari/projeto_ga_mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ari",
+            "email": "ari.neto@estudante.ifto.edu.br"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.21"
+    }
+}
