@@ -1,0 +1,52 @@
+{% extends "base.html.twig"%}
+
+{% block main %}
+
+<h1>Listar Disciplinas</h1>
+
+<a href="/disciplina/cadastro" class="btn btn-success mb-3">Cadastrar Nova Disciplina</a>
+
+{% if disciplinas|length == 0 %}
+    <div class="alert alert-info">
+        Nenhuma disciplina cadastrada.
+    </div>
+{% else %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Período</th>
+            <th>Carga Horária Total</th>
+            <th>Carga Horária Semanal</th>
+            <th>Sigla</th>
+            <th>Componente</th>
+            <th>Grade</th>
+            <th>Bibliografia Básica</th>
+            <th>Bibliografia Complementar</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for disciplina in Disciplinas %}
+        <tr>
+            <td>{{ disciplina.nome }}</td>
+            <td>{{ disciplina.periodo }}</td>
+            <td>{{ disciplina.cargaHorariaTotal }}</td>
+            <td>{{ disciplina.cargaHorariaSemanal }}</td>
+            <td>{{ disciplina.sigla }}</td>
+            <td>{{ disciplina.componente }}</td>
+            <td>{{ disciplina.grade }}</td>
+            <td>{{ disciplina.bibliografiaBasica }}</td>
+            <td>{{ disciplina.bibliografiaComplementar }}</td>
+            <td>
+                <a href="/disciplina/atualizar/{{ disciplina.id }}" class="btn btn-primary">Editar</a>
+                <a href="/disciplina/excluir/{{ disciplina.id }}" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}

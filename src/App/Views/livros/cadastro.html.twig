@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+<h1>Nome do Livro</h1>
+
+    <form action="index.html">
+
+      <div class="">
+
+        <div class="mb-3 col-sm-12 col-md-6">
+          <label for="titulo" class="form-label">Tílulo</label>
+          <input type="text" class="form-control" id="titulo" placeholder="Insira o titulo do livro">
+        </div>
+
+        <div class="mb-3 col-sm-12 col-md-6">
+          <label for="autor" class="form-label">Autor</label>
+          <input type="text" class="form-control" id="autor" placeholder="Insira o Autor do livro">
+        </div>
+
+        <div class="mb-3 col-sm-12 col-md-6">
+          <label for="editora" class="form-label">Editora</label>
+          <input type="text" class="form-control" id="editora" placeholder="Insira o Nome da Editora">
+        </div>
+
+        <div class="mb-3 col-sm-12 col-md-6">
+          <label for="anopublicacao" class="form-label">Ano de Publicação</label>
+          <input type="text" class="form-control" id="anopublicacao" placeholder="Insira ano de Publicação do livro">
+        </div>
+
+        <div class="mb-3 col-sm-12 col-md-6">
+          <label for="localpublicacao" class="form-label">Local de Publicação</label>
+          <input type="text" class="form-control" id="localpublicacao" placeholder="Insira Local de Publicação">
+        </div>
+
+        <div class="mb-3 col-sm-12 col-md-6">
+          <label for="referencialivro" class="form-label">Referência do livro</label>
+          <input type="text" class="form-control" id="referencialivro" placeholder="Insira a referência do livro">
+        </div>
+
+        <div class="mb-3 col-sm-12text-center">
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+
+
+      </div>
+    </form>
+
+{% endblock %}

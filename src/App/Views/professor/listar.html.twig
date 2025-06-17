@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+<h1>Listar Professores</h1>
+
+<a href="/professor/cadastro" class="btn btn-success mb-3">Cadastrar Novo Professor</a>
+
+{% if professores|length == 0 %}
+    <div class="alert alert-info">
+        Nenhum professor cadastrado.
+    </div>
+{% else %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>matrícula</th>
+            <th>nome</th>
+            <th>area</th>
+            <th>ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for professor in professores %}
+        <tr>
+            <td>{{ professor.matricula }}</td>
+            <td>{{ professor.nome }}</td>
+            <td>{{ professor.area }}</td>
+            <td>
+                <a href="/professor/atualizar/{{ professor.id }}" class="btn btn-primary">Editar</a>
+                <a href="/professor/excluir/{{ professor.id }}" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}

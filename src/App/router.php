@@ -47,11 +47,7 @@ function route($route, $path_to_include)
 		exit();
 	}
 
-    ## AJustes
-    $path_domain = "/IFTO/Projeto_GA_MVC/src";
-    $request_url = str_replace($path_domain, '', $_SERVER['REQUEST_URI']);
-	
-    #$request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
+    $request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
 	$request_url = rtrim($request_url, '/');
 	$request_url = strtok($request_url, '?');
 	$route_parts = explode('/', $route);

@@ -19,8 +19,17 @@ class ProfessorController
 
     public function listar()
     {
-        // Lógica para listar professores
-        // Exemplo: buscar professores do banco de dados e renderizar a view
-        require_once __DIR__ . '/../views/professor/listar.php';
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        $professorModel = new \App\Models\Professor();
+        $professores = $professorModel->getAll();
+
+        echo $twig->render('professor/listar.html.twig', [
+            'titulo' => 'Cadastro de Professor',
+            'professores' => $professores,
+        ]);
     }
 }
