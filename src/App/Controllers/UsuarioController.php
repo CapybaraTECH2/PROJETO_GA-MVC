@@ -13,8 +13,8 @@ class UsuarioController
         ]);
 
         echo $twig->render('usuario/cadastro.html.twig', [
-            'titulo' => 'Cadastro de Turma',
-            'mensagem' => 'Preencha os dados da turma',
+            'titulo' => 'Cadastro do Usuário',
+            'mensagem' => 'Preencha os dados do usuário',
         ]);
     }
 
@@ -25,12 +25,15 @@ class UsuarioController
             'cache' => false, // Desativar cache para desenvolvimento
         ]);
 
-        ##MODEL TURMA => BUSCAR AS TURMAS NO BANCO DE DADOS
-
+        $usuarioModel = new \App\Models\Usuario();
+        $usuarios = $usuarioModel->getAll();
         
         echo $twig->render('usuario/listar.html.twig', [
-            'titulo' => 'Listagem de Usários',
-            'mensagem' => 'Aqui estão as usuarios cadastrados',
+            'titulo' => 'Lista de Usuários',
+            'usuarios' => $usuarios,
         ]);
+        
+        
+       
     }
 }

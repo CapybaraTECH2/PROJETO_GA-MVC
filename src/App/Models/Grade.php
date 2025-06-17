@@ -2,12 +2,13 @@
 
 namespace App\Models;
 use App\Models\BD;
-class Disciplina
+ 
+class Grade
 {
     public function getAll()
     {
         $conn = BD::connect();
-        $stmt = $conn->prepare("SELECT d.*, g.ano as grade_ano FROM disciplina AS d JOIN grades AS g ON d.grade_id = g.id");
+        $stmt = $conn->prepare("SELECT * FROM grades");
         $stmt->execute();
         return $stmt->fetchAll();
     }

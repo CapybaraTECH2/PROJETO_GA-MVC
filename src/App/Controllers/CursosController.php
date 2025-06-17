@@ -19,8 +19,18 @@ class CursosController
 
     public function listar()
     {
-        // Lógica para listar cursos
-        // Exemplo: buscar cursos do banco de dados e renderizar a view
-        require_once __DIR__ . '/../views/curso/listar.php';
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        $cursoModel = new \App\Models\Curso();
+        $curso = $cursoModel->getAll();
+
+        echo $twig->render('curso/listar.html.twig', [
+            'titulo' => 'Lista de Cursos',
+            'cursos' => $curso,
+        ]);
     }
+    
 }

@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Models;
-use App\Models\BD;
-class Disciplina
+
+use App\Models\BD;  
+
+class Usuario
 {
     public function getAll()
     {
         $conn = BD::connect();
-        $stmt = $conn->prepare("SELECT d.*, g.ano as grade_ano FROM disciplina AS d JOIN grades AS g ON d.grade_id = g.id");
+        $stmt = $conn->prepare("SELECT * FROM usuarios");
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
+    public function findById($id)
+    {
+    }
 }

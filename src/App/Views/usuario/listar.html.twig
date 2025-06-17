@@ -1,0 +1,43 @@
+{% extends "base.html.twig"%}
+
+{% block main %}
+
+ <h1>Listar Usuários</h1>    
+
+<a href="/usuario/cadastro" class="btn btn-primary mb-3">Novo Usuário</a> 
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Login</th>
+            <th>E_mail</th>
+            <th>senha</th>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.login }}</td>
+            <td>{{ usuario.e_mail }}</td>
+            <td>{{ usuario.senha }}</td>
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.funcao }}</td>
+            <td>
+                  <a href="/usaurio/atualizar/{{ usuario.id }}" class="btn btn-primary">Editar</a>
+                <a href="/usuario/excluir/{{ usuario.id }}" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">Nenhum usuário encontrado.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}

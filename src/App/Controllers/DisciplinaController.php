@@ -29,7 +29,7 @@ class DisciplinaController
         
         echo $twig->render('disciplina/listar.html.twig', [
             'titulo' => 'Lista de Disciplinas',
-            'disciplina' => $disciplina,
+            'disciplinas' => $disciplina,
         ]);
     }
 }

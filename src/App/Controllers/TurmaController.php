@@ -24,13 +24,12 @@ class TurmaController
         $twig = new \Twig\Environment($loader, [
             'cache' => false, // Desativar cache para desenvolvimento
         ]);
-
-        ##MODEL TURMA => BUSCAR AS TURMAS NO BANCO DE DADOS
-
+        $turmaModel = new \App\Models\Turma();
+        $turmas = $turmaModel->getAll();
         
         echo $twig->render('turma/listar.html.twig', [
-            'titulo' => 'Listagem de Turmas',
-            'mensagem' => 'Aqui estão as turmas cadastradas',
+            'titulo' => 'Lista de Turmas',
+            'turmas' => $turmas,
         ]);
-    }
+}
 }

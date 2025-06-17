@@ -25,11 +25,11 @@ class ProfessorController
         ]);
 
         $professorModel = new \App\Models\Professor();
-        $professores = $professorModel->getAll();
+        $professor = $professorModel->getAll();
 
         echo $twig->render('professor/listar.html.twig', [
             'titulo' => 'Cadastro de Professor',
-            'professores' => $professores,
+            'professor' => $professor,
         ]);
     }
 }

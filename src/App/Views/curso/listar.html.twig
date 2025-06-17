@@ -1,0 +1,45 @@
+{% extends "base.html.twig"%}
+
+{% block main %}
+
+<h1>Listar Curso</h1>
+
+<a href="/curso/cadastro" class="btn btn-success mb-3">Cadastrar Nova Disciplina</a>
+
+{% if disciplinas|length == 0 %}
+    <div class="alert alert-info">
+        Nenhuma disciplina cadastrada.
+    </div>
+{% else %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Data início</th>
+            <th>Habilitação</th>
+            <th>Unidade</th> 
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for curso in cursos %}
+        <tr>
+            <td>{{ curso.nome }}</td>
+            <td>{{ curso.descricao }}</td>
+            <td>{{ curso.data_incico }}</td>
+            <td>{{ curso.habilitacao }}</td>
+            <td>{{ curso.unidade }}</td>
+          >
+            <td>
+                <a href="/curso/atualizar/{{ cursos.id }}" class="btn btn-primary">Editar</a>
+                <a href="/curso/excluir/{{ cursos.id }}" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}

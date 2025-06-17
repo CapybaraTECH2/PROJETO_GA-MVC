@@ -19,8 +19,17 @@ class GradeController
 
     public function listar()
     {
-        // Lógica para listar grades
-        // Exemplo: buscar grade do banco de dados e renderizar a view
-        require_once __DIR__ . '/../views/grade/listar.php';
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        $gradeModel = new \App\Models\Grade();
+        $grade = $gradeModel->getAll();
+
+        echo $twig->render('grade/listar.html.twig', [
+            'titulo' => 'Lista de Grades',
+            'grades' => $grade,
+        ]);
     }
 }

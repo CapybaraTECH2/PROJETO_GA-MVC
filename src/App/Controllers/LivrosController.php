@@ -19,9 +19,18 @@ class LivrosController
 
     public function listar()
     {
-        // Lógica para listar livros
-        // Exemplo: buscar livros do banco de dados e renderizar a view
-        require_once __DIR__ . '/../views/livros/listar.php';
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        $livroModel = new \App\Models\Livro();
+        $livros = $livroModel->getAll();
+
+        echo $twig->render('livros/listar.html.twig', [
+            'titulo' => 'Lista de Livro',
+            'livros' => $livros,
+        ]);
     }
 }
  

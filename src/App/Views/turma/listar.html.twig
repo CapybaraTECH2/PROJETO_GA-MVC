@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <h1>Listar Turmas</h1>
+            <a href="/turma/cadastro" class="btn btn-success mb-3">Nova Turma</a>
+
+
+{% if professores|length == 0 %}
+    <div class="alert alert-info">
+        Nenhuma turma cadastrada.
+    </div>
+{% else %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                       
+                        <th>Turma</th>
+                        <th>Carga Horária</th>
+                        <th>Código da Turma</th>
+                        <th>Período</th>
+                        <th>Grade</th>
+                        <th>Sala</th>
+                        <th>Curso</th>
+                        <th>Dias de Aulas</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for turma in turmas %}
+                        <tr>
+                            
+                            <td>{{ turma.turma }}</td>
+                            <td>{{ turma.cargaHoraria }}</td>
+                            <td>{{ turma.codigoTurma }}</td>
+                            <td>{{ turma.periodo }}</td>
+                            <td>{{ turma.grade }}</td>
+                            <td>{{ turma.sala }}</td>
+                            <td>{{ turma.curso }}</td>
+                            <td>{{ turma.diasAulas|join(', ') }}</td>
+                            <td>
+                                <a href="/turma/atualizar/{{ turma.id }}" class="btn btn-primary">Editar</a>
+                <a href="/turma/excluir/{{ turma.id }}" class="btn btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+<h1>Listar livros</h1>
+
+<a href="/livros/cadastro" class="btn btn-success mb-3">Cadastrar Novo Professor</a>
+
+{% if livros|length == 0 %}
+    <div class="alert alert-info">
+        Nenhum livros cadastrado.
+    </div>
+{% else %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Ano de Publicação</th>
+            <th>ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for livro in livros %}
+        <tr>
+            <td>{{ livro.titulo}}</td>
+            <td>{{ livro.autor }}</td>
+            <td>{{ livro.editora }}</td>
+            <td>{{ livro.ano }}</td>
+            <td>
+                <a href="/livros/atualizar/{{ livro.id }}" class="btn btn-primary">Editar</a>
+                <a href="/livros/excluir/{{ livro.id }}" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}

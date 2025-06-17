@@ -1,0 +1,44 @@
+{% extends "base.html.twig"%}
+
+{% block main %}
+
+<h1>Listar Grade</h1>
+
+<a href="/grade/cadastro" class="btn btn-success mb-3">Cadastrar Nova Grade</a>
+
+{% if grades|length == 0 %}
+    <div class="alert alert-info">
+        Nenhuma grade cadastrada.
+    </div>
+{% else %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ano</th>
+            <th>Curso</th>
+            <th>periodicicida de ingresso</th>
+            <th>Turno</th>
+            <th>Unidade</th>           
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for grade in grades %}
+        <tr>
+            <td>{{ grade.ano }}</td>
+            <td>{{ grade.curso}}</td>
+            <td>{{ grade.periodicicidade_ingresso }}</td>
+            <td>{{ grade.turno }}</td>
+            <td>{{ grade.unidade }}</td>
+            <td>
+                <a href="/grade/atualizar/{{ grade.id }}" class="btn btn-primary">Editar</a>
+                <a href="/grade/excluir/{{ grade.id }}" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}
