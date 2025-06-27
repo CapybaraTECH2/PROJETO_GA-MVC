@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+<h1>Atualização de Professor</h1>
+
+   <form action="/professor/update/{{professor.id}}" method="post">
+
+      <div class="">
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="matricula" class="form-label">Matrícula</label>
+          <input type="text" class="form-control" name="matricula" value="{{professor.matricula}}" id="matricula" placeholder="Matrícula do professor">
+        </div>
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="nomeprofessor" class="form-label">Nome do Professor</label>
+          <input type="text" class="form-control" name="nome" value="{{professor.nome}}"id="nomeprofessor" placeholder="Informe o nome do professor">
+        </div>
+
+        <div>
+          <div class="mb-1 col-sm-12 col-md-6">
+            <label for="area" class="form-label">Área</label>
+            <input type="text" class="form-control" name="area" value="{{professor.area}}" id="area" placeholder="Informe a área de atuação">
+          </div>
+
+
+          <div class="mb-1 col-sm-12 col-md-6">
+            <div class="form-floating">
+              <select class="form-select" name="titulacao" id="floatingSelect" aria-label="Floating label select example">
+                <option>Selecione a titulação</option>
+                <option value="Bacharel" {{ professor.titulacao == "Bacharel" ?  "selected" : "" }}>Bacharel</option>
+                <option value="Especialista" {{ professor.titulacao == "Especialista" ?  "selected" : "" }}>Especialista</option>
+                <option value="Mestre" {{ professor.titulacao == "Mestre" ?  "selected" : "" }}>Mestre</option>
+                <option value="Doutor" {{ professor.titulacao == "Doutor" ?  "selected" : "" }}>Doutor</option>
+              </select>
+              <label for="floatingSelect">Titulação</label>
+            </div>
+          </div>
+
+          <div class="mb-1 col-sm-12 col-md-6">
+            <div class="form-floating">
+              <select class="form-select" name="nomeacao" id="floatingSelect" aria-label="Floating label select example">
+                <option>Selecione a Nomeação</option>
+                <option value="concursado" {{professor.nomeacao == "concursado" ? "selected" : ""}}>Concursado</option>
+                <option value="substituto" {{professor.nomeacao == "substitudo" ? "selected" : ""}}>Substituto</option>
+                <option value="temporario" {{professor.nomeacao == "temporario" ? "selected" : ""}}>Temporário</option>
+              </select>
+              <label for="floatingSelect">Nomeação</label>
+            </div>
+          </div>
+
+
+          <div class="mb-3 col-sm-12">
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+          </div>
+
+        </div>
+    </form>
+
+{% endblock %}

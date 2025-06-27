@@ -32,5 +32,62 @@ class CursosController
             'cursos' => $curso,
         ]);
     }
+  
+    public function save()
+    { 
+        $cursoModel = new \App\Models\Curso();  
+
+        $nome = filter_input(INPUT_POST, 'nome');
+        $descricao = filter_input(INPUT_POST, 'descricao');
+        $data_inicio = filter_input(INPUT_POST, 'data_inicio');
+        $habilitacao = filter_input(INPUT_POST, 'habilitacao'); 
+        $unidade = filter_input(INPUT_POST, 'unidade');
+
+        $id = $cursoModel->save($nome, $descricao, $data_inicio, $habilitacao, $unidade);
+        
+        header("Location: /curso/lista");
+    }
+
+   public function atualizar($id)
+     {
+        $cursoModel = new \App\Models\Curso();
+        $curso = $cursoModel->findById($id);
+
+         if (!$curso) {
+             die("curso não encontrado.");
+         }
+
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        echo $twig->render('curso/atualizar.html.twig', [
+            'titulo' => 'Editar curso',
+            'curso' => $curso,
+        ]);
+
+    }
+
+   public function update($id)
+    {
+        $cursoModel = new \App\Models\Curso();
+
+        $nome = filter_input(INPUT_POST, 'nome');
+        $descricao = filter_input(INPUT_POST, 'descricao');
+        $data_inicio = filter_input(INPUT_POST, 'data_inicio');
+        $habilitacao = filter_input(INPUT_POST, 'habilitacao'); 
+        $unidade = filter_input(INPUT_POST, 'unidade');
+
+        $ok = $cursoModel->update($id, $nome, $descricao, $data_inicio, $habilitacao, $unidade);
+        
+        if ($ok) {
+            header("Location: /curso/lista");
+            exit;
+        } 
+    }
+
+
     
+
 }

@@ -9,24 +9,22 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Login</th>
-            <th>E_mail</th>
-            <th>senha</th>
             <th>Nome</th>
             <th>Função</th>
+            <th>E_mail</th>
+            <th>Login</th>
             <th>Ações</th>
         </tr>
     </thead>
     <tbody>
         {% for usuario in usuarios %}
         <tr>
-            <td>{{ usuario.login }}</td>
-            <td>{{ usuario.e_mail }}</td>
-            <td>{{ usuario.senha }}</td>
             <td>{{ usuario.nome }}</td>
             <td>{{ usuario.funcao }}</td>
+            <td>{{ usuario.e_mail }}</td>
+            <td>{{ usuario.login }}</td>
             <td>
-                  <a href="/usaurio/atualizar/{{ usuario.id }}" class="btn btn-primary">Editar</a>
+                  <a href="/usuario/atualizar/{{ usuario.id }}" class="btn btn-primary">Editar</a>
                 <a href="/usuario/excluir/{{ usuario.id }}" class="btn btn-danger">Excluir</a>
             </td>
         </tr>

@@ -1,0 +1,56 @@
+ {% extends "base.html.twig" %}
+
+{% block main %}
+
+<h1>Atualizar Usuário</h1>
+
+<form action="/usuario/update/{{ usuario.id }}" method="post">
+
+    <div class="row">
+
+        <div class="mb-1 col-sm-12 col-md-6">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome" id="nome" value="{{ usuario.nome }}" placeholder="Insira seu Nome">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+            <label for="funcao" class="form-label">Função</label>
+            <input list="funcao" class="form-control" name ="funcao"   id="funcao" value="{{ usuario.funcao }}">
+            <datalist id="funcao">
+                <option value="Professor">
+                <option value="Coordenador">
+                <option value="Gerencia de ensino">
+                <option value="Diretor">
+                <option value="Tecnico Administrativo">
+                <option value="Estagiario">
+            </datalist>
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+            <label for="login" class="form-label">Login</label>
+            <input type="text" class="form-control" name="login" id="login" value="{{ usuario.login }}" placeholder="Insira seu Usuário">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+            <label for="e_mail" class="form-label">E-mail</label>
+            <input type="text" class="form-control" name="e_mail"   id="e_mail" value="{{ usuario.e_mail }}" placeholder="Insira seu E-mail">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" name="senha" value="{{usuario.senha}}" id="senha" placeholder=" Digite sua senha">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+            <label for="confirmacao a senha" class="form-label">Confirmação de senha</label>
+            <input type="password" class="form-control" name="confirma_senha" value="{{usuario.confirma_senha}}" id="confirmacao a senha" placeholder=" Digite sua senha">
+        </div>
+
+        <div class="my-3 col-sm-12 text-center">
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </div>
+                
+        </div>
+  </form>
+ {% endblock %}
+

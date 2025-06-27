@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+
+    <h1>Atualização da Disciplinas</h1>
+
+   <form action="/disciplina/update{{ disciplinas.id }}"  method="post">
+
+      <div class="row">
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="nome" class="form-label">Nome da Disciplina</label>
+          <input type="text" class="form-control" name="nome_disciplina" value="{{disciplina.nome}}" id="nome" placeholder="Informe nome da Disciplina">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="Periodo" class="form-label">Período</label>
+          <input type="number" class="form-control" name="periodo" value="{{disciplina.perido}}" id="Período" placeholder="Informe ó Período">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="cargaHorariatotal" class="form-label">Carga Horária Total</label>
+          <input type="number" class="form-control" name=" carga_horaria_total" value="{{disciplina.carga_horaria_total}}" id="cargaHorariatotal" placeholder="Informe a carga horária total">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-6">
+          <label for="cargaHorariasemanal" class="form-label">Carga Horária Semanal</label>
+          <input type="number" class="form-control" name="carga_horaria_semanal" value="{{disciplina.carga_horaria_semanal}}" id="cargaHorariasemanal" placeholder="Informe a carga Horária semanal">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-4">
+          <label for="sigla" class="form-label">Sigla</label>
+          <input type="text" type="number" class="form-control" name="sigla" value="{{disciplina.sigla}}" id="sigla" placeholder=" Informe a Sigla de Disciplina">
+        </div>
+
+        <div class="mb-1 col-sm-12 col-md-4">
+          <label for="Componente" class="form-label">Componente</label>
+          <input type="text" class="form-control" name="componente" value="{{disciplina.componente}}" id="Componente" placeholder="Informe ó componente">
+        </div>
+
+        <div class="mb-1col-sm-12 col-md-4">
+          <label for="Grade" class="form-label">Grade</label>
+          <input type="text" class="form-control" name="grade" value="{{disciplina.grade}}" id="Grade" placeholder=" Informe á Grade">
+        </div>
+
+          <div class="mb-1 col-sm-12">
+            <label for="Bibliografiabasica" class="form-label">Bibliografia Básica</label>
+            <textarea class="form-control" name="bibliografica_basica"  value="{{disciplina.bibliografia_basica}}" id="Bibliografiabasica" placeholder="Informe à bibliografia básica"></textarea>
+          </div>
+
+          <div class="mb-1 col-sm-12">
+            <label for="BibliografiaComplementar" class="form-label">Bibliografia Complementar</label>
+            <textarea class="form-control" name="bibligrafia_complementar" value="{{disciplina.bibliografia_complementar}}" id="BibliografiaComplementar" placeholder="Informe à bibliografia complementar"></textarea>
+          </div>
+          
+          <div class="mb-1 col-sm-12 ">
+      <button type="submit" class="btn btn-primary">Atualizar</button>
+    </div>
+
+
+        </div>
+    </form>
+
+
+{% endblock %}

@@ -2,33 +2,33 @@
 
 {% block main %}
 
-<form action="index.html">
+<form action="/curso/save" method="post">
 
     <div class="row">
 
     <div class="mb-1 col-sm-12 col-md-6">
       <label for="nomecurso" class="form-label">Nome do Curso</label>
-      <input type="text" class="form-control" id="nomecurso" placeholder="digita o nome do Curso">
+      <input type="text" class="form-control" name="nome" id="nomecurso" placeholder="digita o nome do Curso">
     </div>
 
     <div class="mb-1 col-sm-12 col-md-6">
       <label for="descricao" class="form-label">Descrição</label>
-      <textarea class="form-control" id="descricao" placeholder="Descrição do Curso"></textarea>
+      <textarea class="form-control" name="descricao" id="descricao" placeholder="Descrição do Curso"></textarea>
       </div>
 
     <div class="mb-1 col-sm-12 col-md-6">
-      <label for="dataincico" class="form-label">Data de início</label>
-      <input type="text" class="form-control" id="datainicio" placeholder=" Data de criação do Curso">
+      <label for="data_incico" class="form-label">Data de início</label>
+      <input type="text" class="form-control" name="data_inicio" id="data_inicio" placeholder=" Data de criação do Curso">
     </div>
 
     <div class="mb-1 col-sm-12 col-md-6">
       <label for="habilitacao" class="form-label">Habilitação</label>
-      <input type="text" class="form-control" id="habilitacao" placeholder="Tipo de curso">
+      <input type="text" class="form-control" name="habilitacao" id="habilitacao" placeholder="Tipo de curso">
     </div>
 
     <div class="mb-1 col-sm-12 col-md-6">
       <label for="unidade" class="form-label">Unidade</label>
-      <input type="text" class="form-control" id="unidade" placeholder="Digite a Unidade">
+      <input type="text" class="form-control" name="unidade" id="unidade" placeholder="Digite a Unidade">
     </div>
 
     <div class="mb-1 col-sm-12">

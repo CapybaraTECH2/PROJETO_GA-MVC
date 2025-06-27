@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+<form action="/curso/update{{ curso.id }}" method="post">
+
+    <div class="row">
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="nomecurso" class="form-label">Nome do Curso</label>
+      <input type="text" class="form-control" name="nome" value="{{curso.nome}}" id="nomecurso" placeholder="digita o nome do Curso">
+    </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="descricao" class="form-label">Descrição</label>
+      <textarea class="form-control" name="descricao" value="{{curso.descricao}}" id="descricao" placeholder="Descrição do Curso"></textarea>
+      </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="dataincico" class="form-label">Data de início</label>
+      <input type="text" class="form-control" name="data_inicio" value="{{curso.data_inicio}}" id="data_inicio" placeholder=" Data de criação do Curso">
+    </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="habilitacao" class="form-label">Habilitação</label>
+      <input type="text" class="form-control" name="habilitacao" value="{{curso.habilitacao}}" id="habilitacao" placeholder="Tipo de curso">
+    </div>
+
+    <div class="mb-1 col-sm-12 col-md-6">
+      <label for="unidade" class="form-label">Unidade</label>
+      <input type="text" class="form-control" name="unidade" value="{{curso.unidade}}" id="unidade" placeholder="Digite a Unidade">
+    </div>
+
+    <div class="mb-1 col-sm-12">
+      <button type="submit" class="btn btn-primary">Atualizar</button>
+    </div>
+  
+      
+  </div>
+  </form>
+
+{% endblock %}

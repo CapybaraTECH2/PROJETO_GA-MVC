@@ -18,6 +18,7 @@
             <th>matrícula</th>
             <th>nome</th>
             <th>area</th>
+            <th>titulação</th>
             <th>ações</th>
         </tr>
     </thead>
@@ -27,6 +28,7 @@
             <td>{{ professor.matricula }}</td>
             <td>{{ professor.nome }}</td>
             <td>{{ professor.area }}</td>
+            <td>{{ professor.titulacao }}</td>
             <td>
                 <a href="/professor/atualizar/{{ professor.id }}" class="btn btn-primary">Editar</a>
                 <a href="/professor/excluir/{{ professor.id }}" class="btn btn-danger">Excluir</a>

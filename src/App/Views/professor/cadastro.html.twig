@@ -4,28 +4,28 @@
 
 <h1>Cadastro de Professor</h1>
 
-    <form action="index.html">
+   <form action="/professor/save" method="post">
 
       <div class="">
         <div class="mb-1 col-sm-12 col-md-6">
           <label for="matricula" class="form-label">Matrícula</label>
-          <input type="text" class="form-control" id="matricula" placeholder="Matrícula do professor">
+          <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula do professor">
         </div>
         <div class="mb-1 col-sm-12 col-md-6">
           <label for="nomeprofessor" class="form-label">Nome do Professor</label>
-          <input type="text" class="form-control" id="nomeprofessor" placeholder="Informe o nome do professor">
+          <input type="text" class="form-control" name="nome" id="nomeprofessor" placeholder="Informe o nome do professor">
         </div>
 
         <div>
           <div class="mb-1 col-sm-12 col-md-6">
             <label for="area" class="form-label">Área</label>
-            <input type="text" class="form-control" id="area" placeholder="Informe a área de atuação">
+            <input type="text" class="form-control" name="area" id="area" placeholder="Informe a área de atuação">
           </div>
 
 
           <div class="mb-1 col-sm-12 col-md-6">
             <div class="form-floating">
-              <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <select class="form-select" name="titulacao" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Selecione a titulação</option>
                 <option value="1">Bacharel</option>
                 <option value="2">Especialista</option>
@@ -38,7 +38,7 @@
 
           <div class="mb-1 col-sm-12 col-md-6">
             <div class="form-floating">
-              <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <select class="form-select" name="nomeacao" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Selecione a Nomeação</option>
                 <option value="1">Concursado</option>
                 <option value="2">Substituto</option>

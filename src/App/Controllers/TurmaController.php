@@ -31,5 +31,24 @@ class TurmaController
             'titulo' => 'Lista de Turmas',
             'turmas' => $turmas,
         ]);
-}
+
+    }
+
+    public function save()
+    { 
+        $turmaModel = new \App\Models\Turma();  
+
+        $codigo_turma = filter_input(INPUT_POST, 'codigo_turma');
+        $periodo = filter_input(INPUT_POST, 'periodo');
+        $semestre = filter_input(INPUT_POST, 'semestre');
+        $sigla = filter_input(INPUT_POST, 'sigla');
+        $sala = filter_input(INPUT_POST, 'sala');
+        $dias_aulas = filter_input(INPUT_POST, 'dias_aulas');
+
+        $id = $turmaModel->save($codigo_turma, $periodo, $semestre, $sigla, $sala, $dias_aulas);
+        
+       
+        
+    }
+
 }
