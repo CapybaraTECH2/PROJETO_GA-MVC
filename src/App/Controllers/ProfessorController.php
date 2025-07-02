@@ -86,4 +86,40 @@ class ProfessorController
         } 
     }
 
+
+    public function confirmarExclusao($id)
+    {
+        $professorModel = new \App\Models\Professor();
+        $professor = $professorModel->findById($id);
+
+        if (!$professor) {
+            die("Professor não encontrado.");
+        }
+
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        echo $twig->render('professor/excluir.html.twig', [
+            'titulo' => 'Confirmar Exclusão',
+            'professor' => $professor
+        ]);
+    }
+
+        public function delete($id)
+        {
+        $professorModel = new \App\Models\Professor();
+        $professor = $professorModel->findById($id);
+
+        if (!$professor) {
+            die("Professor não encontrado.");
+
+        }
+        $professorModel ->delete(id: $professor->id); 
+
+            header(header: "Location: /professor/lista");
+            exit;
+        
+    }
 }

@@ -87,7 +87,41 @@ class CursosController
         } 
     }
 
+    public function confirmarExclusao($id)
+    {
+        $cursoModel = new \App\Models\Curso();
+        $curso = $cursoModel->findById($id);
 
+        if (!$curso) {
+            die("Curso não encontrado.");
+        }
+
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        echo $twig->render('curso/excluir.html.twig', [
+            'titulo' => 'Confirmar Exclusão',
+            'curso' => $curso
+        ]);
+    }
+
+        public function delete($id)
     
+        {
+        $cursoModel = new \App\Models\Curso();
+        $curso = $cursoModel->findById($id);
 
+        if (!$curso) {
+            die("Curso não encontrado.");
+
+        }
+        $cursoModel ->delete(id: $curso->id); 
+
+            header(header: "Location: /curso/lista");
+            exit;
+        
+
+}
 }

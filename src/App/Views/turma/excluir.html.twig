@@ -1,0 +1,23 @@
+ {% extends "base.html.twig" %}
+
+{% block main %}
+
+<h1>Excluir Turmas</h1>
+
+<form action="/turma/delete/{{ turma.id }}" method="post">
+
+    <div class="row">
+
+        <h2 class="center" > 
+            Confirmar Exclusão:
+            <strong class="text-bg-danger px-3" >{{ turma.nome }}</strong>?
+
+        </h2>
+
+        <div class="my-3 col-sm-12 text-center">
+            <button type="submit" class="btn btn-primary">Excluir</button>
+        </div>
+                
+        </div>
+  </form>
+ {% endblock %}

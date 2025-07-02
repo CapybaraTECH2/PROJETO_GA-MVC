@@ -3,7 +3,7 @@
 {% block main %}
 <h1>Cadastro de Turmas</h1>
 
-   <form action="/turma/save" method="post">
+   <form action="/turma/save{{turma.id}}" method="post">
 
 
       <div class="row">
@@ -35,27 +35,27 @@
         </div>
         <div class="mb-1 col-sm-12 col-md-3">
           <label for="Turmas" class="form-label">Turma</label>
-          <input type="text" class="form-control" name="turma" id="Turmas" placeholder="Informe a Turma">
+          <input type="text" class="form-control" name="turma" value="{{turma.turma}}" id="Turmas" placeholder="Informe a Turma">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-6">
           <label for="cargaHoraria" class="form-label">Carga Horária</label>
-          <input type="number" class="form-control" name="carga_horaria" id="cargaHoraria" placeholder="Informe a Carga Horária semanal">
+          <input type="number" class="form-control" name="carga_horaria" value="{{turma.carga_horaria}}" id="cargaHoraria" placeholder="Informe a Carga Horária semanal">
         </div>
 
         <div class="mb-1col-sm-12 col-md-3">
           <label for="codigoturma" class="form-label">Código da Turma</label>
-          <input type="text" class="form-control" name= id="codigo_turma" placeholder="Informe o Código da Turma">
+          <input type="text" class="form-control" name= value="{{turma.codigo_turma}}" id="codigo_turma" placeholder="Informe o Código da Turma">
         </div>
 
         <div class="mb-1col-sm-12 col-md-3">
           <label for="periodo" class="form-label">Período</label>
-          <input type="number" class="form-control" name="periodo" id="periodo" placeholder="Informe o Período">
+          <input type="number" class="form-control" name="periodo" value="{{turma.perido}}" id="periodo" placeholder="Informe o Período">
         </div>
 
         <div class="mb-3col-sm-12 col-md-3">
-          <label for="grade" class="form-label">Grade</label>
-          <input type="number" class="form-control" name="grade" id="grade" placeholder="Informe à Grade">
+          <label for="sigla" class="form-label">Sigla</label>
+          <input type="number" class="form-control" name="sigla" value="{{turma.sigla}}" id="sigla" placeholder="Informe à sigla">
         </div>
 
         <div class="mb-3 col-sm-12 col-md-3">
@@ -65,7 +65,7 @@
 
         <div class="mb-0 col-sm-12 col-md-6">
           <label for="sala" class="form-label">Sala</label>
-          <input type="text" class="form-control" name="sala" id="sala" placeholder="Informe o número da sala">
+          <input type="text" class="form-control" name="sala" value="{{turma.sala}}" id="sala" placeholder="Informe o número da sala">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-6">
@@ -83,22 +83,22 @@
 
         <div class="mb-1 col-sm-12 col-md-6">
         <label for="floatingInputValue">Dias de Aulas
-          <span class="input-group-text" name="dias_aulas" id="basic-addon1">
+          <span class="input-group-text" name="dias_aulas" value="{{turma.dias_aulas}}" id="basic-addon1">
 
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-              <input type="checkbox" class="btn-check" name="segunda" id="btncheck1" autocomplete="off">
+              <input type="checkbox" class="btn-check" name="segunda" value="{{turma.segunda}}" id="btncheck1" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck1">Segunda</label>
 
-              <input type="checkbox" class="btn-check" name="terca" id="btncheck2" autocomplete="off">
+              <input type="checkbox" class="btn-check" name="terca" value="{{turma.terca}}" id="btncheck2" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck2">Têrça</label>
 
-              <input type="checkbox" class="btn-check" name="quarta" id="btncheck3" autocomplete="off">
+              <input type="checkbox" class="btn-check" name="quarta" value="{{turma.quarta}}" id="btncheck3" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck3">Quarta</label>
 
-              <input type="checkbox" class="btn-check" name="quinta" id="btncheck4" autocomplete="off">
+              <input type="checkbox" class="btn-check" name="quinta" value="{{turma.quinta}}" id="btncheck4" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck4">Quinta</label>
 
-              <input type="checkbox" class="btn-check" name="sexta" id="btncheck5" autocomplete="off">
+              <input type="checkbox" class="btn-check" name="sexta" value="{{turma.sexta}}" id="btncheck5" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck5">Sexta</label>
             </div>
 

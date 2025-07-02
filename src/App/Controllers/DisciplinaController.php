@@ -91,4 +91,41 @@ class DisciplinaController
         } 
     }
 
+     public function confirmarExclusao($id)
+    {
+        $disciplinaModel = new \App\Models\Disciplina();
+        $disciplina = $disciplinaModel->findById($id);
+
+        if (!$disciplina) {
+            die("Disciplina não encontrado.");
+        }
+
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../Views');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => false, // Desativar cache para desenvolvimento
+        ]);
+
+        echo $twig->render('disciplina/excluir.html.twig', [
+            'titulo' => 'Confirmar Exclusão',
+            'disciplina' => $disciplina
+        ]);
+    }
+
+        public function delete($id)
+    
+        {
+        $disciplinaModel = new \App\Models\Disciplina();
+        $disciplina = $disciplinaModel->findById($id);
+
+        if (!$disciplina) {
+            die("Disciplina não encontrado.");
+
+        }
+        $disciplinaModel ->delete(id: $disciplina->id); 
+
+            header(header: "Location: /disciplina/lista");
+            exit;
+        
+
+}
 }

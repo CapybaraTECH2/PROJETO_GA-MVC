@@ -52,20 +52,15 @@ post('/disciplina/update/$id', function($id){
 get('/disciplina/excluir/$id', function($id){
     $controller = new App\Controllers\DisciplinaController();
 
-    $controller->excluir($id);
+    $controller->confirmarExclusao($id);
 });
 
-get('/discipĺina/delete/$id', function($id){
+post('/discipĺina/delete/$id', function($id){
     $controller = new App\Controllers\DisciplinaController();
 
     $controller->delete($id);
 });
 
-get('/disciplina/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
-
-    $controller->delete($id);
-});
 //FIM CRUD DISCIPLINA
 
 //CRUD TURMA
@@ -102,19 +97,7 @@ post('/turma/update/$id', function($id){
 get('/turma/excluir/$id', function($id){
     $controller = new App\Controllers\TurmaController();
 
-    $controller->excluir($id); 
-});
-
-get('/turma/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
-
-    $controller->delete($id);
-});
-
-get('/turma/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
-
-    $controller->delete($id);
+    $controller->confirmarExclusao($id); 
 });
 
 post('/turma/delete/$id', function($id){
@@ -203,20 +186,15 @@ post('/professor/update/$id', function($id){
 get('/professor/excluir/$id', function($id){
     $controller = new App\Controllers\ProfessorController();
 
-    $controller->excluir($id);
+    $controller->confirmarExclusao($id);
 });
 
-get('/professor/delete/$id', function($id){
+post('/professor/delete/$id', function($id){
     $controller = new App\Controllers\ProfessorController();
 
     $controller->delete($id);
 });
 
-post('/professor/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
-
-    $controller->delete($id);
-});
 //FIM CRUD PROFESSOR
 
 //CRUD LIVROS
@@ -254,20 +232,15 @@ post('/livros/update/$id', function($id){
 get('/livros/excluir/$id', function($id){
     $controller = new App\Controllers\LivrosController();
 
-    $controller->excluir($id);
+    $controller->confirmarExclusao($id);
 });
 
-get('/livros/delete/$id', function($id){
+post('/livros/delete/$id', function($id){
     $controller = new App\Controllers\LivrosController();
 
     $controller->delete($id);
 });   
 
-post('/livro/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
-
-    $controller->delete($id);
-});
 //FIM CRUD LIVROS
 
 //CRUD GRADE
@@ -304,20 +277,15 @@ post('/grade/update/$id', function($id){
 get('/grade/excluir/$id', function($id){
     $controller = new App\Controllers\GradeController();
 
-    $controller->excluir($id);
+    $controller->confirmarExclusao($id);
 });
 
-get('/grade/delete/$id', function($id){
+post('/grade/delete/$id', function($id){
     $controller = new App\Controllers\GradeController();
 
     $controller->delete($id);
 });
 
-post('/grade/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
-
-    $controller->delete($id);
-});
 // FIM CRUD GRADE
 
 //CRUD CURSOS
@@ -354,20 +322,17 @@ post('/curso/update/$id', function($id){
 get('/curso/excluir/$id', function($id){
     $controller = new App\Controllers\CursosController();
 
-    $controller->excluir($id);
+    $controller->confirmarExclusao($id);
 });
 
-get('/curso/delete/$id', function($id){
+post('/curso/delete/$id', function($id){
     $controller = new App\Controllers\CursosController();
 
     $controller->delete($id);
 });
 
-post('/curso/delete/$id', function($id){
-    $controller = new App\Controllers\TurmaController();
 
-    $controller->delete($id);
-});
+
 // FIM CRUD CURSOS
 
 // For GET or POST

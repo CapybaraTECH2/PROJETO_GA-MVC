@@ -57,6 +57,23 @@ public function save($matricula, $nome, $area, $titulacao, $nomeacao){
          return $stmt->execute();
      }
 
+     public function delete($id)
+    {
+        $conn = BD::connect();
+
+        $professor = $this->findById($id);
+        if (!$professor) {
+            die("Usuário não encontrado.");
+    }
+    
+     
+        $sql = $conn->prepare(query: "DELETE FROM professores WHERE id = :id");
+        $sql->bindValue(param: ":id", value: $professor->id);
+        $sql->execute();
+
+
+        return true;
+    }
 
 
 }

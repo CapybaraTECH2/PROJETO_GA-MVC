@@ -59,4 +59,22 @@ class Disciplina
          return $stmt->execute();
      }
 
+
+    public function delete($id)
+    {
+        $conn = BD::connect();
+
+        $disciplina = $this->findById($id);
+        if (!$disciplina) {
+            die("Usuário não encontrado.");
+    }
+    
+     
+        $sql = $conn->prepare(query: "DELETE FROM disciplina WHERE id = :id");
+        $sql->bindValue(param: ":id", value: $disciplina->id);
+        $sql->execute();
+
+
+        return true;
+    }
 }

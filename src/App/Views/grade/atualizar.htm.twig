@@ -2,42 +2,42 @@
 
 {% block main %}
 
-<h1>cadastro Grade</h1>
+<h1>Atualizar Grade</h1>
 
-<form action="/grade/save" method="post">
+<form action="/grade/save{{ grade.id}}" method="post">
 
       <div class="row">
 
         <div class="mb-1 col-sm-12 col-md-6">
           <label for="ano" class="form-label">Ano</label>
-          <input type="text" class="form-control" name="ano" id="ano" placeholder="Digite o ano">
+          <input type="text" class="form-control" name="ano" value="{{grade.ano}}" id="ano" placeholder="Digite o ano">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-6">
           <label for="curso" class="form-label">Modalidade</label>
-          <input type="text" class="form-control" name="curso" id="curso" placeholder="digita a modalidade">
+          <input type="text" class="form-control" name="curso" value="{{grade.curso}} "id="curso" placeholder="digita a modalidade">
         </div>
 
         <div class="mb-1 col-md-6">
           <label for="periodicicidadeingresso" class="form-label">Periodicidade de Ingresso</label>
-          <input type="text" class="form-control" name="periodicidade_igresso" id="periodicicidadein" placeholder=" Ingresso">
+          <input type="text" class="form-control" name="periodicidade_ingresso" value="{{grade.periodicidade_ingresso}}" id="periodicidadeingresso" placeholder=" Ingresso">
         </div>
 
 
         <div class="mb-1 col-sm-12 col-md-6">
           <label for="floatingInputValue">Turno
-            <span class="input-group-text" name="turno" id="basic-addon1">
+            <span class="input-group-text" name="turno" value="{{grade.turno}}" id="basic-addon1">
 
 
 
               <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <input type="checkbox" class="btn-check" name="matutino" id="btncheck1" autocomplete="off">
+                <input type="checkbox" class="btn-check" name="matutino" value="{{grade.matunino}}" id="btncheck1" autocomplete="off">
                 <label class="btn btn-outline-primary" for="btncheck1">Matutino</label>
 
-                <input type="checkbox" class="btn-check" name="vespetino" id="btncheck2" autocomplete="off">
+                <input type="checkbox" class="btn-check" name="vespetino" value="{{grade.vespetino}}" id="btncheck2" autocomplete="off">
                 <label class="btn btn-outline-primary" for="btncheck2">Vespetino</label>
 
-                <input type="checkbox" class="btn-check" name="noturno" id="btncheck3" autocomplete="off">
+                <input type="checkbox" class="btn-check" name="noturno" value="{{grade.noturno}}" id="btncheck3" autocomplete="off">
                 <label class="btn btn-outline-primary" for="btncheck3">Noturno</label>
               </div>
 
@@ -50,39 +50,39 @@
 
         <div class="mb-1 col-sm-12 col-md-6 .col-md-6">
           <label for="unidade" class="form-label">Unidade</label>
-          <input type="text" class="form-control" name="unidade"id="unidade" placeholder="Digite a Unidade">
+          <input type="text" class="form-control" name="unidade" value="{{grade.unidade}}" id="unidade" placeholder="Digite a Unidade">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-3">
           <label for="cargaHorariapresencial" class="form-label">Carga Horária Presencial</label>
-          <input type="number" class="form-control" name="ch_presencial" id="cargaHorariapresencial"
+          <input type="number" class="form-control" name="ch_presencial" value="{{grade.ch_presencial}}" id="cargaHorariapresencial"
             placeholder="Informe a carga Horária Presencial">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-3">
           <label for="cargaHorariadistancia" class="form-label">Carga Horária a Distância</label>
-          <input type="number" class="form-control" name="ch_distancia" id="cargaHorariadistancia"
+          <input type="number" class="form-control" name="ch_distancia" value="{{grade.ch_distancia}}" id="cargaHorariadistancia"
             placeholder="Informe a carga Horária a Distância">
         </div>
 
 
         <div class="mb-1 col-sm-12 col-md-3">
           <label for="duracaominima" class="form-label">Duração Minima</label>
-          <input type="number" class="form-control" name"duracao_minima" id="duracaominima" placeholder="Informe a Duração Minima">
+          <input type="number" class="form-control" name"duracao_minima" value="{{grade.dracao_minima}}" id="duracaominima" placeholder="Informe a Duração Minima">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-3">
           <label for="duracaomaxima" class="form-label">Duração Maxima</label>
-          <input type="number" class="form-control" name="duracao_maxima" id="duracaomaxima" placeholder="Informe a Duração Maxima">
+          <input type="number" class="form-control" name="duracao_maxima" value="{{grade.duracao_maxima}}" id="duracaomaxima" placeholder="Informe a Duração Maxima">
         </div>
 
         <div class="mb-1 col-sm-12 col-md-6 .col-md-6">
           <label for="vagasofertadas" class="form-label">Vagas Ofertadas</label>
-          <input type="text" class="form-control" name="vagas_ofertadas" id="vagasofertadas" placeholder="Digite a quantideade de vagas ofertadas">
+          <input type="text" class="form-control" name="vagas_ofertadas" value="{{grade.vagas_ofertadas}}" id="vagasofertadas" placeholder="Digite a quantideade de vagas ofertadas">
         </div>
 
         <div class="mb-1 col-sm-12">
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" class="btn btn-primary">Atualizar</button>
         </div>
 
 

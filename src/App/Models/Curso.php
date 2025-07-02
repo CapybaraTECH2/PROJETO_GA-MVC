@@ -60,7 +60,23 @@ public function save($nome, $descricao, $data_inicio, $habilitacao, $unidade){
      }
 
 
+    public function delete($id)
+    {
+        $conn = BD::connect();
+
+        $curso = $this->findById($id);
+        if (!$curso) {
+            die("Usuário não encontrado.");
+    }
     
+     
+        $sql = $conn->prepare(query: "DELETE FROM cursos WHERE id = :id");
+        $sql->bindValue(param: ":id", value: $curso->id);
+        $sql->execute();
+
+
+        return true;
+    }
 
     
 }
